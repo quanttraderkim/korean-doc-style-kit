@@ -1,6 +1,6 @@
 ---
 name: report-memo-doc-style
-description: Use this skill when Korean business documents feel too long, too polite, too abstract, or too hard to scan. Apply it to strategy memos, PRDs, service planning docs, capability specs, weekly updates, one-pagers, and hub pages so they read like concise report-style memos with strong structure, selective tables, explicit numbering for long docs, and minimal filler.
+description: Use this skill when Korean business documents feel too long, too polite, too abstract, or too hard to scan. Apply it to strategy memos, upper-planning docs, PRDs, service planning docs, capability specs, weekly updates, one-pagers, and hub pages so they read like concise report-style memos with strong structure, selective tables, explicit numbering for long docs, and minimal filler.
 ---
 
 # Report Memo Doc Style
@@ -33,13 +33,15 @@ For longer strategy, planning, or report documents, prefer explicit outline numb
 
 Use bullets only for parallel items. Do not break a single sentence into fake bullets just to make the page look shorter.
 
-Use tables when the reader needs comparison, categorization, ownership, tradeoffs, options, targets, or summary at a glance.
+Use tables when the reader needs comparison, categorization, ownership, tradeoffs, options, targets, state transitions, or summary at a glance.
 
 If three or more items need to be compared, categorized, or scanned quickly, default to a table rather than a paragraph. Do not leave comparison logic buried in prose.
 
 Preserve the source logic unless the user explicitly asks for a report-first rewrite. Add structure first. Rewrite substance only when it materially improves clarity.
 
 When documenting writing rules or guidance, avoid dense narrative explanation. Prefer short labeled blocks such as `A. 기본 방향`, `B. 문체`, `C. 구조`, `D. 표/불릿/제목`.
+
+For long planning or policy documents, do not place document history, revision logs, ticket references, or guide metadata above the real summary. Show purpose and key judgment first, then place metadata below if needed.
 
 ## Rewrite Modes
 
@@ -111,6 +113,28 @@ Rules:
 - Avoid essay-style narration
 - If the first screen does not show `왜 중요한가 / 핵심 판단 / 시사점`, compress before expanding
 
+### Upper Planning / Concept Planning
+
+Recommended structure:
+
+- `목적`
+- `핵심 요약`
+- `왜 지금`
+- `방향`
+- `우선순위`
+- `1차 범위`
+- `후속 상세기획 연결`
+- `리스크 / 전제`
+
+Rules:
+
+- Treat this as a direction-setting document, not a full execution plan
+- The first screen should show `핵심 판단 / 방향 / 우선순위 / 1차 범위`
+- Use summary tables aggressively near the top
+- Compress execution detail, long history tables, and metadata unless they change the current judgment
+- If execution detail must remain, push it below the direction-setting sections
+- Distinguish clearly between `방향`, `우선순위`, and `후속 상세기획에서 풀 내용`
+
 ### PRD / Service Planning Doc
 
 Recommended structure:
@@ -133,6 +157,9 @@ Rules:
 - For long planning docs, show `핵심 판단 / 범위 / 범위 제외 또는 후속 / 오픈 이슈` near the top
 - If policy, exception, storage, upload, or lifecycle rules are mixed together, split them into labeled tables before adding prose
 - When a source contains large mapping tables, keep the original detail but add a smaller summary table first so the reader can understand the logic before reading the full matrix
+- If the document is policy-heavy, prefer `활성화 조건 → 생성/저장 → 예외 다운로드 → 업로드/리마인드 → 미노출/파기/삭제 → 오픈 이슈` ordering
+- For policy-heavy planning docs, separate data principles, exception rules, and deletion/retention rules into tables before narrative explanation
+- Move revision history or operational metadata below the top summary unless the history itself is the subject
 
 ### Skill Spec / Capability Spec
 
@@ -257,6 +284,8 @@ Do not repeat the same judgment in slightly different wording.
 Do not add summary language unless it actually summarizes something.
 
 Do not replace a concrete claim with an abstract phrase.
+
+Do not put document history, revision logs, or metadata tables above the key summary in long planning or concept documents.
 
 Do not hide the main body behind collapsed sections unless the user explicitly wants a report-first summary page.
 

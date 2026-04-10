@@ -54,6 +54,7 @@ After:
 | 문서 타입 | 언제 쓰나 | 추천 프롬프트 |
 | --- | --- | --- |
 | 전략 메모 | 왜 중요한지, 어떤 판단이 필요한지 먼저 보여줘야 할 때 | [`prompts/strategy-memo.md`](./prompts/strategy-memo.md) |
+| 상위기획 / 컨셉 기획 | 방향, 우선순위, 1차 범위를 먼저 보여줘야 할 때 | [`prompts/upper-planning.md`](./prompts/upper-planning.md) |
 | PRD / 서비스기획 | 문제 정의, 범위, 흐름, 정책, 오픈 이슈를 분리해야 할 때 | [`prompts/prd-service-planning.md`](./prompts/prd-service-planning.md) |
 | Skill / Capability Spec | 입력, 출력, 예외, 평가 기준을 명확히 써야 할 때 | [`prompts/skill-spec.md`](./prompts/skill-spec.md) |
 | 유즈케이스 / 버티컬 워크플로 | `상황 / 동작 / 가치 / 제한` 구조로 정리해야 할 때 | [`prompts/use-case.md`](./prompts/use-case.md) |
@@ -85,6 +86,7 @@ After:
 ## 포함된 프롬프트 템플릿
 
 - [`prompts/strategy-memo.md`](./prompts/strategy-memo.md)
+- [`prompts/upper-planning.md`](./prompts/upper-planning.md)
 - [`prompts/prd-service-planning.md`](./prompts/prd-service-planning.md)
 - [`prompts/skill-spec.md`](./prompts/skill-spec.md)
 - [`prompts/use-case.md`](./prompts/use-case.md)
