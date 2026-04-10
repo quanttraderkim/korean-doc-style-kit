@@ -60,7 +60,7 @@ Codex, Claude, OpenClaw, 다른 셸 에이전트 모두 아래처럼 쓸 수 있
 
 > 이건 위클리 위키야. 한 화면에서 이번 주 핵심 변화와 리스크가 보이게 바꿔줘.
 
-> 이건 큰 상태판이 있는 보드형 위클리야. 위클리 회의용으로 먼저 읽히게 정리해줘.
+> 이건 상태판이 큰 위클리야. 회의용으로 먼저 읽히게 정리해줘.
 
 > 이건 이슈 대응 문서야. 예상 질문, 권고 답변, 리스크를 먼저 보이게 정리해줘.
 
@@ -75,12 +75,11 @@ Codex, Claude, OpenClaw, 다른 셸 에이전트 모두 아래처럼 쓸 수 있
 | PRD처럼 정리해줘 | `PRD / service planning` |
 | 유즈케이스 문서로 바꿔줘 | `use case` |
 | 위키 허브 문서처럼 만들어줘 | `hub page` |
-| 위클리처럼 정리해줘 | `weekly update` |
-| 보드형 위클리처럼 정리해줘 | `team weekly board` |
+| 위클리처럼 정리해줘 | 기본은 `weekly update`, 상태판이 크면 `team weekly board` 변형 |
 | 이슈 대응 문서처럼 정리해줘 | `response memo` |
 | 이슈 히스토리 위키처럼 정리해줘 | `issue history / incident log` |
 
-즉, 실제 사용에서는 `정확한 스킬 이름 + 정확한 mode`를 매번 외워서 말하는 것보다, 문서 성격을 자연어로 말하는 편이 더 현실적입니다. 그리고 별도 설명이 없으면 `위클리`는 기본적으로 짧은 `weekly update`로 해석하고, 큰 상태판이나 포트폴리오 보드가 중심일 때만 `보드형 위클리`로 보는 편이 좋습니다.
+즉, 실제 사용에서는 `정확한 스킬 이름 + 정확한 mode`를 매번 외워서 말하는 것보다, 문서 성격을 자연어로 말하는 편이 더 현실적입니다. 그리고 별도 설명이 없으면 `위클리`는 하나의 문서군으로 이해하고, 짧은 주간 공유면 `weekly update`, 큰 상태판이나 포트폴리오 보드가 중심이면 그 안의 보드형 변형으로 해석하는 편이 좋습니다.
 
 ### Codex에서 쓸 때
 
@@ -126,8 +125,7 @@ OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspac
 | Skill / Capability Spec | 입력, 출력, 예외, 평가 기준을 명확히 써야 할 때 | `skill spec` + `source-preserving` | [`prompts/skill-spec.md`](./prompts/skill-spec.md) |
 | 유즈케이스 / 버티컬 워크플로 | `상황 / 동작 / 가치 / 제한` 구조로 정리해야 할 때 | `use case` + `light report-style` | [`prompts/use-case.md`](./prompts/use-case.md) |
 | 허브 / 인덱스 페이지 | 어디부터 읽을지, 어떤 문서가 중요한지 먼저 보여줘야 할 때 | `hub page` + `source-preserving` | [`prompts/hub-page.md`](./prompts/hub-page.md) |
-| 위클리 | 짧은 weekly summary나 대시보드 업데이트를 빠르게 공유해야 할 때 | `weekly update` + `light report-style` | [`prompts/weekly-update.md`](./prompts/weekly-update.md) |
-| 보드형 위클리 (실험) | 큰 상태판 중심의 weekly / biweekly / 분기 포트폴리오 보드를 회의용으로 정리할 때 | `team weekly board` + `light report-style` | [`prompts/team-weekly-board.md`](./prompts/team-weekly-board.md) |
+| 위클리 | 짧은 weekly summary, 대시보드 업데이트, 상태판 중심 팀 위클리까지 포함하는 문서군. 기본은 `weekly update`로 보고, 큰 상태판이면 보드형 변형으로 해석 | `weekly update` + `light report-style` 기본, 큰 상태판이면 `team weekly board` 변형 | [`prompts/weekly-update.md`](./prompts/weekly-update.md), [`prompts/team-weekly-board.md`](./prompts/team-weekly-board.md) |
 | 의사결정 원페이저 | 선택지 비교와 요청 결정사항을 한 장으로 정리할 때 | `decision one-pager` + `light report-style` | [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md) |
 | 트래킹 / 옵스 보드 (실험) | 살아 있는 이슈 보드, 확인 필요사항, 운영 현황, 상태 추적 문서를 빠르게 읽히게 정리할 때 | `tracking / ops board` + `source-preserving` 또는 `light report-style` | [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md) |
 | 이슈 히스토리 / 인시던트 로그 (실험) | 닫힌 이슈, 장애, 대응 이력을 누적 참조용으로 남길 때 | `issue history / incident log` + `source-preserving` | [`prompts/issue-history-incident-log.md`](./prompts/issue-history-incident-log.md) |
