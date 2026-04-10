@@ -2,7 +2,16 @@
 
 이 레포를 Claude에서 사용할 때의 기본 원칙은 단순합니다.
 
-정본은 `prompts/`가 아니라 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다. Claude에게 문서를 다시 쓰게 할 때는 먼저 이 파일을 읽게 하고, 그 다음 문서 타입과 rewrite mode를 지정하는 방식을 권장합니다.
+정본은 `prompts/`가 아니라 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다. Claude Code는 공식적으로 `~/.claude/skills/<skill-name>/SKILL.md` 또는 프로젝트 `.claude/skills/<skill-name>/SKILL.md` 위치의 스킬을 지원하므로, 가능하면 이 경로에 설치해서 실제 skill처럼 쓰는 방식을 권장합니다.
+
+예시:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R skills/report-memo-doc-style ~/.claude/skills/
+```
+
+설치 후에는 자동으로 관련 문서에서 로드되거나 `/report-memo-doc-style`로 직접 호출할 수 있습니다.
 
 권장 순서:
 

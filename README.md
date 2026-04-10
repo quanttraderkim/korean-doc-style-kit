@@ -56,7 +56,23 @@ Codex, Claude, 다른 셸 에이전트 모두 아래처럼 쓸 수 있습니다.
 
 ### Claude나 다른 에이전트에서 쓸 때
 
-Codex처럼 자동 skill 시스템이 없어도, [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)를 직접 읽게 하면 같은 방식으로 쓸 수 있습니다. 이 레포의 root [`CLAUDE.md`](./CLAUDE.md)도 같은 사용 방식을 간단히 설명합니다.
+Claude Code는 공식적으로 personal / project scope skill을 지원합니다. 이 레포의 스킬을 Claude에서 실제 skill처럼 쓰려면, Claude 공식 문서가 안내하는 위치인 `~/.claude/skills/<skill-name>/SKILL.md` 또는 프로젝트의 `.claude/skills/<skill-name>/SKILL.md`로 설치하면 됩니다. 설치 후에는 자동 로드되거나 `/report-memo-doc-style`로 직접 호출할 수 있습니다.
+
+예시:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R skills/report-memo-doc-style ~/.claude/skills/
+```
+
+프로젝트 전용으로 두고 싶다면:
+
+```bash
+mkdir -p .claude/skills
+cp -R skills/report-memo-doc-style .claude/skills/
+```
+
+이 레포의 root [`CLAUDE.md`](./CLAUDE.md)에는 Claude 기준 사용 방식을 따로 짧게 정리해두었습니다.
 
 프롬프트 템플릿은 정본이 아니라 `shortcut` 또는 `fallback`입니다. 스킬 파일을 직접 읽히기 어려운 환경에서만 참고용으로 쓰는 것을 권장합니다.
 
