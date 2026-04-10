@@ -325,6 +325,46 @@ Rules:
 - Keep unresolved items and resolved history in separate sections or tables
 - If the source is mainly a chronological closed-issue log, do not force this shape; treat it as an issue history / incident log candidate instead
 
+### Issue History / Incident Log (Experimental)
+
+Recommended structure:
+
+- `문서 범위`
+- `최근 핵심 이슈`
+- `이슈 / 사건 인덱스`
+- `사건별 기록`
+- `공통 패턴 / 재발 방지`
+- `참고 링크`
+
+Rules:
+
+- Use this for accumulated issue history, known-issue memory, incident chronology, and response-history pages
+- Optimize for reference and recall, not for live tracking
+- Keep chronology and incident boundaries explicit
+- For each incident, prefer a repeated fixed shape such as `이슈 내용 / 원인 / 영향 / 조치 / 후속`
+- Put one compact index or summary block near the top before long historical detail
+- Separate active unresolved tracking from closed historical record
+- If the source is mainly a live open-issue board, use `Tracking / Ops Board` instead
+
+### Response Memo (Experimental)
+
+Recommended structure:
+
+- `목적`
+- `핵심 입장`
+- `주요 질문 / 이슈`
+- `권고 답변 / 모범 답변`
+- `리스크 / 확인 필요사항`
+- `요청사항 / 다음 액션`
+
+Rules:
+
+- Use this for PR response prep, executive Q&A prep, external inquiry 대응, and sensitive issue explanation memos
+- Put the official stance or recommended answer on the first screen
+- Separate `공식 답변`, `내부 판단`, `미확정 사항`, and `추가 확인 필요` clearly
+- Prefer tables for `질문 / 답변 / 리스크 / 상태 / 담당`
+- If the source is mainly a day-by-day 대응 연표, treat it as `Issue History / Incident Log` instead of forcing a response-memo shape
+
 ## Hard Don’ts
 
 Do not write long introductory filler before the real point.

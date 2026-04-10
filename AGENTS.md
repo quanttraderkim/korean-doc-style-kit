@@ -8,12 +8,12 @@
 
 ## 2. 사용자 README 우선
 
-공개 사용자는 [`README.md`](./README.md)를 먼저 읽습니다. README에는 사용자 기준 설치와 사용만 두고, 내부 운영 메모는 여기나 maintainer 문서로 내립니다.
+공개 사용자는 [`README.md`](./README.md)를 먼저 읽습니다. README에는 사용자 기준 설치와 사용만 둡니다.
 
 ## 3. tracked 영역 익명화
 
 git tracked 파일에는 실제 문서 제목, 제품명, 프로젝트명, URL, page id를 남기지 않습니다. 관련 기준은 [`PRIVACY.md`](./PRIVACY.md)를 따릅니다.
 
-## 4. 운영 세부는 maintainer 문서 참조
+## 4. README와 SKILL의 일관성 유지
 
-회귀 운영, failure code 사용, 프리셋 추가 기준, 배포 메모 같은 세부 운영 규칙은 [`MAINTAINERS.md`](./MAINTAINERS.md)를 따릅니다.
+사용자용 설명은 README에 맞추고, 스킬 규칙의 정본은 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)에 둡니다. tracked 영역에서는 방법론만 공유하고 실제 회귀 결과는 로컬에서만 관리합니다.

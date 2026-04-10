@@ -96,6 +96,8 @@ OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspac
 | 팀 위클리 보드 (실험) | 큰 상태판 중심의 weekly / biweekly / 분기 포트폴리오 보드를 회의용으로 정리할 때 | `team weekly board` + `light report-style` | [`prompts/team-weekly-board.md`](./prompts/team-weekly-board.md) |
 | 의사결정 원페이저 | 선택지 비교와 요청 결정사항을 한 장으로 정리할 때 | `decision one-pager` + `light report-style` | [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md) |
 | 트래킹 / 옵스 보드 (실험) | 살아 있는 이슈 보드, 확인 필요사항, 운영 현황, 상태 추적 문서를 빠르게 읽히게 정리할 때 | `tracking / ops board` + `source-preserving` 또는 `light report-style` | [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md) |
+| 이슈 히스토리 / 인시던트 로그 (실험) | 닫힌 이슈, 장애, 대응 이력을 누적 참조용으로 남길 때 | `issue history / incident log` + `source-preserving` | [`prompts/issue-history-incident-log.md`](./prompts/issue-history-incident-log.md) |
+| 대응 문서 / Q&A 메모 (실험) | 대외·대내 답변, 예상 질문, 모범 답변, 리스크, 추가 확인사항을 정리할 때 | `response memo` + `light report-style` | [`prompts/response-memo.md`](./prompts/response-memo.md) |
 
 ## 무엇이 들어 있나
 
@@ -131,6 +133,8 @@ OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspac
 - [`prompts/team-weekly-board.md`](./prompts/team-weekly-board.md)
 - [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md)
 - [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md)
+- [`prompts/issue-history-incident-log.md`](./prompts/issue-history-incident-log.md)
+- [`prompts/response-memo.md`](./prompts/response-memo.md)
 
 ## 예시
 
