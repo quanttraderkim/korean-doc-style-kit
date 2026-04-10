@@ -7,6 +7,9 @@ Requirements:
 - Prefer tables for status, owner, next action, timing, and risk
 - Keep dated notes compact
 - Use bullets only for true parallel items
+- Use this for open issue boards, check-needed pages, and active coordination pages
+- Keep unresolved items and resolved history separate
+- If the source is mainly a chronological closed-issue log, do not force this preset
 
 Recommended structure:
 

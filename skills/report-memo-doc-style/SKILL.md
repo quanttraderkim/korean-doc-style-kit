@@ -218,6 +218,30 @@ Rules:
 - Keep it short enough to skim in one screen per section
 - Prefer status tables over long progress prose
 - Separate done, blocked, next clearly
+- Use this preset for short weekly summaries and dashboard-style updates, not for large portfolio boards
+- Put `이번 주 핵심 변화 / 핵심 To-Do / 리스크` on the first screen before detailed tables
+- If the source already has a stable project table, keep it below a compact executive summary instead of flattening it into prose
+- Remove empty template rows, duplicated section blocks, and obvious system noise before polishing
+
+### Team Weekly Board (Experimental)
+
+Recommended structure:
+
+- `이번 주 핵심 신호`
+- `주요 공유 / 결정 필요`
+- `핵심 To-Do`
+- `포트폴리오 보드`
+- `리스크 / 지원 요청`
+- `참고 링크 / 부록`
+
+Rules:
+
+- Use this when the source is a board-heavy team weekly, biweekly, or quarter portfolio page
+- Keep one compact executive summary above the main board
+- Preserve the board shape; do not rewrite the whole page into narrative summary
+- Remove template noise, duplicated sections, and system metadata leaking into titles or cells
+- If `전주 진행 / 금주 계획 / 장기 목표` are mixed in one cell, split them before polishing
+- Keep the first screen meeting-friendly: top signals, decisions needed, and next actions first
 
 ### Decision One-Pager
 
@@ -297,6 +321,9 @@ Rules:
 - Separate `현재 상태`, `결정 필요`, and `참고 메모` clearly
 - Use stable status labels such as `진행 중`, `대기`, `완료`, `리스크`
 - If the page mixes agenda, tracking, and memo content, split them into separate labeled sections before polishing
+- Use this preset for open issue boards, check-needed pages, and active coordination pages
+- Keep unresolved items and resolved history in separate sections or tables
+- If the source is mainly a chronological closed-issue log, do not force this shape; treat it as an issue history / incident log candidate instead
 
 ## Hard Don’ts
 

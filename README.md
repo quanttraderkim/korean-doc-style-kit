@@ -92,9 +92,10 @@ OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspac
 | Skill / Capability Spec | 입력, 출력, 예외, 평가 기준을 명확히 써야 할 때 | `skill spec` + `source-preserving` | [`prompts/skill-spec.md`](./prompts/skill-spec.md) |
 | 유즈케이스 / 버티컬 워크플로 | `상황 / 동작 / 가치 / 제한` 구조로 정리해야 할 때 | `use case` + `light report-style` | [`prompts/use-case.md`](./prompts/use-case.md) |
 | 허브 / 인덱스 페이지 | 어디부터 읽을지, 어떤 문서가 중요한지 먼저 보여줘야 할 때 | `hub page` + `source-preserving` | [`prompts/hub-page.md`](./prompts/hub-page.md) |
-| 주간 업데이트 | 진행 / 이슈 / 다음 액션을 짧게 공유해야 할 때 | `weekly update` + `light report-style` | [`prompts/weekly-update.md`](./prompts/weekly-update.md) |
+| 주간 업데이트 | 짧은 weekly summary나 대시보드 업데이트를 빠르게 공유해야 할 때 | `weekly update` + `light report-style` | [`prompts/weekly-update.md`](./prompts/weekly-update.md) |
+| 팀 위클리 보드 (실험) | 큰 상태판 중심의 weekly / biweekly / 분기 포트폴리오 보드를 회의용으로 정리할 때 | `team weekly board` + `light report-style` | [`prompts/team-weekly-board.md`](./prompts/team-weekly-board.md) |
 | 의사결정 원페이저 | 선택지 비교와 요청 결정사항을 한 장으로 정리할 때 | `decision one-pager` + `light report-style` | [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md) |
-| 트래킹 / 옵스 보드 (실험) | 살아 있는 이슈 보드, 운영 현황, 상태 추적 문서를 빠르게 읽히게 정리할 때 | `tracking / ops board` + `source-preserving` 또는 `light report-style` | [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md) |
+| 트래킹 / 옵스 보드 (실험) | 살아 있는 이슈 보드, 확인 필요사항, 운영 현황, 상태 추적 문서를 빠르게 읽히게 정리할 때 | `tracking / ops board` + `source-preserving` 또는 `light report-style` | [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md) |
 
 ## 무엇이 들어 있나
 
@@ -127,6 +128,7 @@ OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspac
 - [`prompts/use-case.md`](./prompts/use-case.md)
 - [`prompts/hub-page.md`](./prompts/hub-page.md)
 - [`prompts/weekly-update.md`](./prompts/weekly-update.md)
+- [`prompts/team-weekly-board.md`](./prompts/team-weekly-board.md)
 - [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md)
 - [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md)
 

@@ -7,6 +7,9 @@ Requirements:
 - Make progress, blockers, and next steps immediately visible
 - Prefer a compact status table if it helps
 - Use bullets only for true parallel items
+- Use this when the page is mainly a short weekly summary or dashboard update
+- If the source already contains a large stable board, keep the board below a compact first-screen summary instead of forcing everything into prose
+- Remove empty template rows, duplicated weekly blocks, and obvious system noise before polishing
 
 Recommended structure:
 
