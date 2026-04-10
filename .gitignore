@@ -1,0 +1,6 @@
+.DS_Store
+evaluation/private/
+evaluation/scoreboard.local.md
+evaluation/results/*.local.md
+*.local.md
+*.local.py

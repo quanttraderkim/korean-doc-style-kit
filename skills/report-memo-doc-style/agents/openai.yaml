@@ -1,0 +1,4 @@
+interface:
+  display_name: "Report Memo Doc Style"
+  short_description: "한국어 비즈니스 문서를 보고용 메모체와 구조화 중심으로 다듬는 가이드"
+  default_prompt: "Use $report-memo-doc-style to rewrite this Korean business document in concise report-style memo wording with stronger structure, selective tables, and numbering when helpful."
