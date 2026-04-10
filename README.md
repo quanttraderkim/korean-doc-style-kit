@@ -35,37 +35,49 @@ After:
 
 ## 빠르게 써보기
 
+이 레포의 중심은 프롬프트가 아니라 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다. 문서를 다시 쓰게 할 때는 먼저 이 파일을 읽게 하고, 그 다음 문서 타입과 rewrite mode를 지정하는 방식 권장입니다.
+
+### 권장 방식: 모든 에이전트에서 SKILL.md를 정본으로 사용
+
+Codex, Claude, 다른 셸 에이전트 모두 아래처럼 쓸 수 있습니다.
+
+1. 에이전트에게 이 레포의 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)를 읽게 함
+2. 문서 타입을 지정함
+3. `source-preserving`, `light report-style`, `report-first` 중 mode를 지정함
+4. 원문 초안을 함께 줌
+
+예시 요청:
+
+> 이 레포의 `skills/report-memo-doc-style/SKILL.md`를 기준으로 이 문서를 strategy memo로 다시 써줘. mode는 light report-style. 원문 논리는 유지하고, 첫 화면에 핵심 판단과 요청사항이 보이게 해줘.
+
 ### Codex에서 쓸 때
 
 [`skills/report-memo-doc-style`](./skills/report-memo-doc-style) 폴더를 로컬 Codex skills 디렉터리에 두고, 문서 요청 시 `$report-memo-doc-style`을 같이 호출하면 됩니다.
 
-### 다른 에이전트에서 쓸 때
+### Claude나 다른 에이전트에서 쓸 때
 
-[`prompts/`](./prompts/) 아래 템플릿 중 하나를 그대로 복붙해서 쓰면 됩니다. 보통 아래 세 가지를 같이 주면 충분합니다.
+Codex처럼 자동 skill 시스템이 없어도, [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)를 직접 읽게 하면 같은 방식으로 쓸 수 있습니다. 이 레포의 root [`CLAUDE.md`](./CLAUDE.md)도 같은 사용 방식을 간단히 설명합니다.
 
-1. 원본 초안
-2. 문서 타입
-3. 원문 유지형인지, 가벼운 보고형인지, 보고서형인지
+프롬프트 템플릿은 정본이 아니라 `shortcut` 또는 `fallback`입니다. 스킬 파일을 직접 읽히기 어려운 환경에서만 참고용으로 쓰는 것을 권장합니다.
 
-처음 시작할 때는 `문서 타입`과 `rewrite mode`를 먼저 고르고, 그 다음 해당 프롬프트를 붙이는 방식 권장입니다.
+## 어떤 문서에 어떤 스킬 모드를 쓰나
 
-## 어떤 문서에 어떤 프롬프트를 쓰나
-
-| 문서 타입 | 언제 쓰나 | 추천 프롬프트 |
-| --- | --- | --- |
-| 전략 메모 | 왜 중요한지, 어떤 판단이 필요한지 먼저 보여줘야 할 때 | [`prompts/strategy-memo.md`](./prompts/strategy-memo.md) |
-| 상위기획 / 컨셉 기획 | 방향, 우선순위, 1차 범위를 먼저 보여줘야 할 때 | [`prompts/upper-planning.md`](./prompts/upper-planning.md) |
-| PRD / 서비스기획 | 문제 정의, 범위, 흐름, 정책, 오픈 이슈를 분리해야 할 때 | [`prompts/prd-service-planning.md`](./prompts/prd-service-planning.md) |
-| Skill / Capability Spec | 입력, 출력, 예외, 평가 기준을 명확히 써야 할 때 | [`prompts/skill-spec.md`](./prompts/skill-spec.md) |
-| 유즈케이스 / 버티컬 워크플로 | `상황 / 동작 / 가치 / 제한` 구조로 정리해야 할 때 | [`prompts/use-case.md`](./prompts/use-case.md) |
-| 허브 / 인덱스 페이지 | 어디부터 읽을지, 어떤 문서가 중요한지 먼저 보여줘야 할 때 | [`prompts/hub-page.md`](./prompts/hub-page.md) |
-| 주간 업데이트 | 진행 / 이슈 / 다음 액션을 짧게 공유해야 할 때 | [`prompts/weekly-update.md`](./prompts/weekly-update.md) |
-| 의사결정 원페이저 | 선택지 비교와 요청 결정사항을 한 장으로 정리할 때 | [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md) |
+| 문서 타입 | 언제 쓰나 | 먼저 지정할 것 | 참고 템플릿 |
+| --- | --- | --- | --- |
+| 전략 메모 | 왜 중요한지, 어떤 판단이 필요한지 먼저 보여줘야 할 때 | `strategy memo` + `light report-style` | [`prompts/strategy-memo.md`](./prompts/strategy-memo.md) |
+| 상위기획 / 컨셉 기획 | 방향, 우선순위, 1차 범위를 먼저 보여줘야 할 때 | `upper planning` + `light report-style` | [`prompts/upper-planning.md`](./prompts/upper-planning.md) |
+| PRD / 서비스기획 | 문제 정의, 범위, 흐름, 정책, 오픈 이슈를 분리해야 할 때 | `PRD / service planning` + `light report-style` | [`prompts/prd-service-planning.md`](./prompts/prd-service-planning.md) |
+| Skill / Capability Spec | 입력, 출력, 예외, 평가 기준을 명확히 써야 할 때 | `skill spec` + `source-preserving` | [`prompts/skill-spec.md`](./prompts/skill-spec.md) |
+| 유즈케이스 / 버티컬 워크플로 | `상황 / 동작 / 가치 / 제한` 구조로 정리해야 할 때 | `use case` + `light report-style` | [`prompts/use-case.md`](./prompts/use-case.md) |
+| 허브 / 인덱스 페이지 | 어디부터 읽을지, 어떤 문서가 중요한지 먼저 보여줘야 할 때 | `hub page` + `source-preserving` | [`prompts/hub-page.md`](./prompts/hub-page.md) |
+| 주간 업데이트 | 진행 / 이슈 / 다음 액션을 짧게 공유해야 할 때 | `weekly update` + `light report-style` | [`prompts/weekly-update.md`](./prompts/weekly-update.md) |
+| 의사결정 원페이저 | 선택지 비교와 요청 결정사항을 한 장으로 정리할 때 | `decision one-pager` + `light report-style` | [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md) |
 
 ## 무엇이 들어 있나
 
-- Codex에서 바로 쓸 수 있는 스킬
-- 다른 에이전트에도 복붙해서 쓸 수 있는 문서 타입별 프롬프트
+- 정본 역할의 스킬 문서: [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)
+- Codex / Claude / 다른 에이전트에서 스킬을 적용하는 방법
+- 참고용 프롬프트 템플릿
 - 스타일 차이를 바로 볼 수 있는 before / after 예시
 - 스킬을 실제 문서로 점검하고 개선할 수 있는 evaluation 루프
 
@@ -83,7 +95,7 @@ After:
 - 긴 문서는 `A.`, `A-1.` 넘버링 권장
 - 비교, 카테고리, 읽기 순서, 요약은 문단보다 작은 표 우선
 
-## 포함된 프롬프트 템플릿
+## 참고용 프롬프트 템플릿
 
 - [`prompts/strategy-memo.md`](./prompts/strategy-memo.md)
 - [`prompts/upper-planning.md`](./prompts/upper-planning.md)
