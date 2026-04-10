@@ -120,6 +120,7 @@ After:
 - [`evaluation/review-checklist.md`](./evaluation/review-checklist.md)
 - [`evaluation/feedback-template.md`](./evaluation/feedback-template.md)
 - [`evaluation/cases/README.md`](./evaluation/cases/README.md)
+- [`evaluation/cases/case.template.md`](./evaluation/cases/case.template.md)
 - [`evaluation/scoreboard.template.md`](./evaluation/scoreboard.template.md)
 - [`evaluation/results/README.md`](./evaluation/results/README.md)
 - [`PRIVACY.md`](./PRIVACY.md)

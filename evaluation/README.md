@@ -16,7 +16,7 @@
 
 ## B. 권장 루프
 
-1. [`cases/`](./cases/)에 있는 고정 문서 하나 선택
+1. 로컬 전용 `evaluation/cases/*.local.md`에서 고정 문서 하나 선택
 2. 스킬 없이 결과 생성
 3. 스킬을 켠 결과 생성
 4. [`rubric.md`](./rubric.md)로 점수 비교
@@ -32,6 +32,7 @@
 - 실패 코드: [`failure-taxonomy.md`](./failure-taxonomy.md)
 - 리뷰 기록 템플릿: [`feedback-template.md`](./feedback-template.md)
 - 고정 문서 세트 운영 방식: [`cases/README.md`](./cases/README.md)
+- 케이스 카드 템플릿: [`cases/case.template.md`](./cases/case.template.md)
 - 누적 지표판 템플릿: [`scoreboard.template.md`](./scoreboard.template.md)
 - 평가 결과 로그 운영 방식: [`results/README.md`](./results/README.md)
 
