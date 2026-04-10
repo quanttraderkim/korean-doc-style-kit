@@ -39,7 +39,7 @@ After:
 
 ### 권장 방식: 모든 에이전트에서 SKILL.md를 정본으로 사용
 
-Codex, Claude, 다른 셸 에이전트 모두 아래처럼 쓸 수 있습니다.
+Codex, Claude, OpenClaw, 다른 셸 에이전트 모두 아래처럼 쓸 수 있습니다.
 
 1. 에이전트에게 이 레포의 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)를 읽게 함
 2. 문서 타입을 지정함
@@ -76,6 +76,12 @@ cp -R skills/report-memo-doc-style .claude/skills/
 
 프롬프트 템플릿은 정본이 아니라 `shortcut` 또는 `fallback`입니다. 스킬 파일을 직접 읽히기 어려운 환경에서만 참고용으로 쓰는 것을 권장합니다.
 
+### OpenClaw / ClawHub에서 쓸 때
+
+OpenClaw 기준으로는 repo 전체보다 [`skills/report-memo-doc-style/`](./skills/report-memo-doc-style) 폴더 하나가 실제 배포 단위에 가깝습니다. 현재 [`SKILL.md`](./skills/report-memo-doc-style/SKILL.md)는 `name`, `description`, `homepage`, `metadata.openclaw`를 포함한 OpenClaw-friendly frontmatter로 정리돼 있어서, workspace skill로 두거나 ClawHub publish 대상 폴더로 쓰기 좋은 상태입니다.
+
+OpenClaw 로컬 workspace에서는 이 폴더를 `<workspace>/skills/report-memo-doc-style/` 아래에 두면 되고, ClawHub에 올릴 때도 repo root가 아니라 이 skill 폴더를 기준으로 다루는 것을 권장합니다. 설치와 sync 흐름 자체는 OpenClaw / ClawHub 공식 문서를 따르는 편이 가장 안전합니다.
+
 ## 어떤 문서에 어떤 스킬 모드를 쓰나
 
 | 문서 타입 | 언제 쓰나 | 먼저 지정할 것 | 참고 템플릿 |
@@ -88,6 +94,7 @@ cp -R skills/report-memo-doc-style .claude/skills/
 | 허브 / 인덱스 페이지 | 어디부터 읽을지, 어떤 문서가 중요한지 먼저 보여줘야 할 때 | `hub page` + `source-preserving` | [`prompts/hub-page.md`](./prompts/hub-page.md) |
 | 주간 업데이트 | 진행 / 이슈 / 다음 액션을 짧게 공유해야 할 때 | `weekly update` + `light report-style` | [`prompts/weekly-update.md`](./prompts/weekly-update.md) |
 | 의사결정 원페이저 | 선택지 비교와 요청 결정사항을 한 장으로 정리할 때 | `decision one-pager` + `light report-style` | [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md) |
+| 트래킹 / 옵스 보드 (실험) | 살아 있는 이슈 보드, 운영 현황, 상태 추적 문서를 빠르게 읽히게 정리할 때 | `tracking / ops board` + `source-preserving` 또는 `light report-style` | [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md) |
 
 ## 무엇이 들어 있나
 
@@ -121,6 +128,7 @@ cp -R skills/report-memo-doc-style .claude/skills/
 - [`prompts/hub-page.md`](./prompts/hub-page.md)
 - [`prompts/weekly-update.md`](./prompts/weekly-update.md)
 - [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md)
+- [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md)
 
 ## 예시
 

@@ -1,6 +1,9 @@
 ---
 name: report-memo-doc-style
 description: Use this skill when Korean business documents feel too long, too polite, too abstract, or too hard to scan. Apply it to strategy memos, upper-planning docs, PRDs, service planning docs, capability specs, weekly updates, one-pagers, and hub pages so they read like concise report-style memos with strong structure, selective tables, explicit numbering for long docs, and minimal filler.
+homepage: https://github.com/quanttraderkim/korean-doc-skill
+user-invocable: true
+metadata: {"openclaw":{"homepage":"https://github.com/quanttraderkim/korean-doc-skill"}}
 ---
 
 # Report Memo Doc Style
@@ -8,6 +11,8 @@ description: Use this skill when Korean business documents feel too long, too po
 ## Overview
 
 Use this skill when the target tone is a Korean business working document rather than an essay. The goal is fast comprehension, clear judgments, and scan-friendly structure.
+
+This file is the canonical skill definition for Codex, Claude, OpenClaw, and other agents that can load a `SKILL.md` file directly.
 
 Typical trigger signals:
 
@@ -272,6 +277,26 @@ Rules:
 - Use tables or grouped bullets to show category purpose and representative documents
 - Avoid repeating the same document list in multiple formats unless each list serves a different reading path
 - First screen should show `문서 묶음 정의 / 지금 먼저 볼 것 / 읽기 순서` before longer explanation
+
+### Tracking / Ops Board (Experimental)
+
+Recommended structure:
+
+- `현재 상태`
+- `이번 주 핵심 변화`
+- `주요 이슈 / 리스크`
+- `트래킹 항목`
+- `다음 액션`
+- `지원 필요사항`
+
+Rules:
+
+- Optimize for live tracking, not persuasive narrative
+- Put status, owner, next action, and timing in tables by default
+- Keep dated updates compact; do not let them drift into diary-style prose
+- Separate `현재 상태`, `결정 필요`, and `참고 메모` clearly
+- Use stable status labels such as `진행 중`, `대기`, `완료`, `리스크`
+- If the page mixes agenda, tracking, and memo content, split them into separate labeled sections before polishing
 
 ## Hard Don’ts
 
