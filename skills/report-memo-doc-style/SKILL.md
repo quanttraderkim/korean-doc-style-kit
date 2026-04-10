@@ -73,7 +73,7 @@ Natural-language shortcuts:
 - `유즈케이스`, `직군별 시나리오` -> `Use Case / Vertical Workflow Doc`
 - `허브 문서`, `인덱스 페이지`, `문서 모음 소개` -> `Hub / Index Page`
 - `위클리`, `주간 업데이트` -> `Weekly Update`
-- `팀위클리`, `보드형 위클리`, `분기 보드` -> `Team Weekly Board`
+- `보드형 위클리`, `큰 상태판 위클리`, `분기 보드` -> `Team Weekly Board`
 - `이슈 대응 문서`, `Q&A 대응`, `답변 정리` -> `Response Memo`
 - `이슈 히스토리`, `장애 이력`, `대응 이력` -> `Issue History / Incident Log`
 
