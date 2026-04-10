@@ -78,9 +78,9 @@ cp -R skills/report-memo-doc-style .claude/skills/
 
 ### OpenClaw / ClawHub에서 쓸 때
 
-OpenClaw 기준으로는 repo 전체보다 [`skills/report-memo-doc-style/`](./skills/report-memo-doc-style) 폴더 하나가 실제 배포 단위에 가깝습니다. 현재 [`SKILL.md`](./skills/report-memo-doc-style/SKILL.md)는 `name`, `description`, `homepage`, `metadata.openclaw`를 포함한 OpenClaw-friendly frontmatter로 정리돼 있어서, workspace skill로 두거나 ClawHub publish 대상 폴더로 쓰기 좋은 상태입니다.
+현재 [`SKILL.md`](./skills/report-memo-doc-style/SKILL.md)는 `name`, `description`, `homepage`, `metadata.openclaw`를 포함한 OpenClaw-friendly frontmatter로 정리돼 있어서, OpenClaw workspace skill이나 ClawHub 배포용 skill로 쓰기 좋은 상태입니다.
 
-OpenClaw 로컬 workspace에서는 이 폴더를 `<workspace>/skills/report-memo-doc-style/` 아래에 두면 되고, ClawHub에 올릴 때도 repo root가 아니라 이 skill 폴더를 기준으로 다루는 것을 권장합니다. 설치와 sync 흐름 자체는 OpenClaw / ClawHub 공식 문서를 따르는 편이 가장 안전합니다.
+OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspace>/skills/report-memo-doc-style/` 아래에 두고 쓰면 됩니다. 설치와 sync 흐름 자체는 OpenClaw / ClawHub 공식 문서를 따르는 편이 가장 안전합니다.
 
 ## 어떤 문서에 어떤 스킬 모드를 쓰나
 

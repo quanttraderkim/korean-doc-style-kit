@@ -30,6 +30,12 @@ git tracked 파일에는 실제 문서 제목, 제품명, 프로젝트명, URL, 
 
 스킬 규칙을 바꿨으면 README의 설명, 문서 타입 표, evaluation 설명도 같이 맞춥니다. 공개 레포 사용자는 README를 먼저 보므로, README와 SKILL이 어긋나면 안 됩니다.
 
+README에는 사용자 기준 설치와 사용 방법을 우선 적습니다. 배포 단위, publish 경로, 레지스트리 제출 같은 maintainer 관점 내용은 AGENTS 또는 로컬 운영 메모로 내립니다.
+
 ## 6. 실제 문서 기준 유지
 
 예시는 추상적인 더미 문장보다 실제 업무 문서에서 자주 나오는 실패 패턴을 기준으로 고칩니다. 목표는 “좋은 글쓰기”가 아니라 “더 빨리 읽히는 보고용 문서”입니다.
+
+## 7. OpenClaw / ClawHub 배포 메모
+
+OpenClaw / ClawHub 관점에서는 repo 전체보다 `skills/report-memo-doc-style/` 폴더가 실제 배포 단위에 가깝습니다. 사용자 README에는 이 내부 운영 관점을 길게 쓰지 않고, maintainer가 배포할 때만 참고합니다.
