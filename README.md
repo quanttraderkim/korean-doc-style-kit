@@ -35,20 +35,50 @@ After:
 
 ## 빠르게 써보기
 
-이 레포의 중심은 프롬프트가 아니라 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다. 문서를 다시 쓰게 할 때는 먼저 이 파일을 읽게 하고, 그 다음 문서 타입과 rewrite mode를 지정하는 방식 권장입니다.
+이 레포의 중심은 프롬프트가 아니라 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다. 다만 실제로 쓸 때는 문서 타입과 mode를 매번 정확히 외워서 말할 필요까지는 없습니다. 보통은 스킬을 먼저 읽게 한 뒤, 자연어로 `전략 문서로 정리해줘`, `위키 허브 문서처럼 바꿔줘`, `이건 이슈 대응 문서야` 정도로만 말해도 충분합니다.
+
+기본 원칙은 간단합니다. 문서 타입은 대략적으로 말하고, mode는 특별한 이유가 없으면 생략합니다. mode를 생략하면 스킬은 기본적으로 `원문 논리는 유지하고 구조만 더 읽히게 만드는 쪽`으로 해석합니다.
 
 ### 권장 방식: 모든 에이전트에서 SKILL.md를 정본으로 사용
 
 Codex, Claude, OpenClaw, 다른 셸 에이전트 모두 아래처럼 쓸 수 있습니다.
 
 1. 에이전트에게 이 레포의 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)를 읽게 함
-2. 문서 타입을 지정함
-3. `source-preserving`, `light report-style`, `report-first` 중 mode를 지정함
-4. 원문 초안을 함께 줌
+2. 문서가 대략 어떤 성격인지 자연어로 말함
+3. 원문 초안을 함께 줌
+4. 정말 필요할 때만 mode를 따로 지정함
 
 예시 요청:
 
-> 이 레포의 `skills/report-memo-doc-style/SKILL.md`를 기준으로 이 문서를 strategy memo로 다시 써줘. mode는 light report-style. 원문 논리는 유지하고, 첫 화면에 핵심 판단과 요청사항이 보이게 해줘.
+> 이 레포의 `skills/report-memo-doc-style/SKILL.md`를 기준으로 이 문서를 전략 문서로 다시 써줘. 원문 논리는 유지하고, 첫 화면에 핵심 판단과 요청사항이 보이게 해줘.
+
+또는 더 짧게:
+
+> 이거 위키에 올릴 전략 문서인데, 너무 설명형이라 보고용 메모처럼 다시 정리해줘.
+
+> 이 문서는 PRD에 가까워. 범위, 정책, 오픈 이슈가 바로 보이게 정리해줘.
+
+> 이건 위클리 위키야. 한 화면에서 이번 주 핵심 변화와 리스크가 보이게 바꿔줘.
+
+> 이건 이슈 대응 문서야. 예상 질문, 권고 답변, 리스크를 먼저 보이게 정리해줘.
+
+### 실제로는 이렇게 말하면 됩니다
+
+아래처럼 말하면 대부분의 에이전트가 적절한 프리셋을 추론할 수 있습니다.
+
+| 이렇게 말하면 됨 | 내부적으로는 대략 이렇게 해석 |
+| --- | --- |
+| 전략 문서로 정리해줘 | `strategy memo` |
+| 상위기획 문서처럼 써줘 | `upper planning` |
+| PRD처럼 정리해줘 | `PRD / service planning` |
+| 유즈케이스 문서로 바꿔줘 | `use case` |
+| 위키 허브 문서처럼 만들어줘 | `hub page` |
+| 위클리처럼 정리해줘 | `weekly update` |
+| 팀위클리 보드처럼 정리해줘 | `team weekly board` |
+| 이슈 대응 문서처럼 정리해줘 | `response memo` |
+| 이슈 히스토리 위키처럼 정리해줘 | `issue history / incident log` |
+
+즉, 실제 사용에서는 `정확한 스킬 이름 + 정확한 mode`를 매번 외워서 말하는 것보다, 문서 성격을 자연어로 말하는 편이 더 현실적입니다.
 
 ### Codex에서 쓸 때
 
@@ -82,7 +112,9 @@ cp -R skills/report-memo-doc-style .claude/skills/
 
 OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspace>/skills/report-memo-doc-style/` 아래에 두고 쓰면 됩니다. 설치와 sync 흐름 자체는 OpenClaw / ClawHub 공식 문서를 따르는 편이 가장 안전합니다.
 
-## 어떤 문서에 어떤 스킬 모드를 쓰나
+## 문서 타입별 추천 해석
+
+실제 사용에서는 위 표처럼 자연어로 말해도 충분하지만, 더 명시적으로 쓰고 싶을 때는 아래 표를 참고하면 됩니다.
 
 | 문서 타입 | 언제 쓰나 | 먼저 지정할 것 | 참고 템플릿 |
 | --- | --- | --- | --- |

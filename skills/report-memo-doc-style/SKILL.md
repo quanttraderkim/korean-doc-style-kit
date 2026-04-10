@@ -21,6 +21,9 @@ Typical trigger signals:
 - the document has long prose but weak structure
 - the reader should be able to skim it quickly
 - the output will be uploaded to a wiki or shared as an internal review document
+- the user says things like `전략 문서로 정리`, `상위기획처럼`, `PRD처럼`, `위키 허브처럼`, `위클리처럼`, `이슈 대응 문서처럼`
+
+You do not need exact preset names from the user. If the user's natural-language intent is clear enough, infer the closest preset and proceed.
 
 ## Core Rules
 
@@ -59,6 +62,20 @@ Choose one mode first.
 | Report-first rewrite | Reorder the document for decision support. Add stronger top summary and re-sequence sections around judgment. | The audience wants quick decision support, not source-faithful reading. |
 
 If the user does not specify a mode, default to source-preserving rewrite plus structure improvement.
+
+In practice, most users will not name the mode explicitly. If the user says `정리해줘`, `다듬어줘`, `위키용으로 다시 써줘`, or similar, default to `light report-style` unless source fidelity is clearly more important.
+
+Natural-language shortcuts:
+
+- `전략 문서`, `방향성 검토`, `논의 안` -> `Strategy Memo`
+- `상위기획`, `연간 계획`, `컨셉 기획` -> `Upper Planning / Concept Planning`
+- `상세기획`, `PRD`, `기획서` -> `PRD / Service Planning Doc`
+- `유즈케이스`, `직군별 시나리오` -> `Use Case / Vertical Workflow Doc`
+- `허브 문서`, `인덱스 페이지`, `문서 모음 소개` -> `Hub / Index Page`
+- `위클리`, `주간 업데이트` -> `Weekly Update`
+- `팀위클리`, `보드형 위클리`, `분기 보드` -> `Team Weekly Board`
+- `이슈 대응 문서`, `Q&A 대응`, `답변 정리` -> `Response Memo`
+- `이슈 히스토리`, `장애 이력`, `대응 이력` -> `Issue History / Incident Log`
 
 ## Default Tone
 
