@@ -112,6 +112,8 @@ Rules:
 - Use lists for reasons, risks, or evidence only
 - Avoid essay-style narration
 - If the first screen does not show `왜 중요한가 / 핵심 판단 / 시사점`, compress before expanding
+- If the source is option-heavy, show `권고안`, `비교 기준`, and `요청사항` on the first screen before detailed evidence
+- For option-comparison memos, default to one compact comparison table first and push detailed financial or operational backup below
 
 ### Upper Planning / Concept Planning
 

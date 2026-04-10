@@ -11,6 +11,7 @@ Requirements:
 - Use explicit structure such as `A.`, `A-1.` if the document is long
 - Use a summary table near the top by default
 - If comparison, value structure, or option logic exists, move it into a table instead of prose
+- If the source contains multiple options, show the recommended option, comparison basis, and requested support or decision near the top
 - Use bullets only for real parallel items
 - Avoid abstract filler and repeated phrasing
 
@@ -23,6 +24,7 @@ Recommended structure:
 5. 근거
 6. 리스크 / 전제
 7. 시사점
+8. 요청사항 (if the source is asking for support, decision, or resources)
 
 Top summary table default:
 
@@ -30,3 +32,4 @@ Top summary table default:
 - 왜 돈을 내는가 / 왜 중요한가
 - 가장 중요한 타깃 또는 영역
 - 제품 / 전략 시사점
+- 권고안 / 요청사항 (if option comparison or resource ask exists)
