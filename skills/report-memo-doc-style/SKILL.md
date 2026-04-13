@@ -42,6 +42,8 @@ For longer strategy, planning, or report documents, prefer explicit outline numb
 
 Use bullets only for parallel items. Do not break a single sentence into fake bullets just to make the page look shorter.
 
+Do not force sentence-final periods onto every short line. In headings, labels, table cells, bullets, one-line judgments, and memo-style fragments, omit the final period by default. Use a period only when writing a full prose sentence with multiple clauses, when two or more sentences appear in one paragraph, or when punctuation materially reduces ambiguity.
+
 Use tables when the reader needs comparison, categorization, ownership, tradeoffs, options, targets, state transitions, or summary at a glance.
 
 If three or more items need to be compared, categorized, or scanned quickly, default to a table rather than a paragraph. Do not leave comparison logic buried in prose.
