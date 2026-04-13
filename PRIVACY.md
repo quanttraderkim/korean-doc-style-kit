@@ -7,7 +7,7 @@
 - 실제 문서 제목, 제품명, 프로젝트명, 조직명, 서비스명은 git tracked 파일에 넣지 않음
 - Confluence / Jira URL, page id, issue key, source URL은 git tracked 파일에 넣지 않음
 - 회귀 케이스는 항상 `STRAT-001`, `PRD-001`, `USECASE-001` 같은 익명 ID로만 기록
-- 결과 로그, scoreboard, 예시, README, 프롬프트, 스킬 예시 모두 동일 기준 적용
+- 결과 로그, scoreboard, 예시, README, 스킬 예시 모두 동일 기준 적용
 - 실제 매핑 정보는 로컬 전용 파일에만 보관
 
 ## 로컬 전용 파일

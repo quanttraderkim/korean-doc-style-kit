@@ -35,17 +35,27 @@ After:
 
 ## 빠르게 써보기
 
-이 레포의 중심은 프롬프트가 아니라 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다. 다만 실제로 쓸 때는 문서 타입과 mode를 매번 정확히 외워서 말할 필요까지는 없습니다. 보통은 스킬을 먼저 읽게 한 뒤, 자연어로 `전략 문서로 정리해줘`, `위키 허브 문서처럼 바꿔줘`, `이건 이슈 대응 문서야` 정도로만 말해도 충분합니다.
+이 레포의 중심은 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다. 실제 사용은 훨씬 단순합니다. 보통은 스킬을 먼저 읽게 한 뒤, 문서 성격만 자연어로 말하면 됩니다.
 
-기본 원칙은 간단합니다. 문서 타입은 대략적으로 말하고, mode는 특별한 이유가 없으면 생략합니다. mode를 생략하면 스킬은 기본적으로 `원문 논리는 유지하고 구조만 더 읽히게 만드는 쪽`으로 해석합니다.
+기본 원칙은 두 가지입니다. 첫째, 사용자는 `전략 문서`, `PRD`, `위클리`, `이슈 대응`, `허브 문서`처럼 대략적인 문서 성격만 말하면 됩니다. 둘째, mode는 특별한 이유가 없으면 생략합니다. mode를 생략하면 스킬은 기본적으로 `원문 논리는 유지하고 구조만 더 읽히게 만드는 쪽`으로 해석합니다.
+
+### 실제 사용은 이렇게 생각하면 됩니다
+
+Codex, Claude, OpenClaw, 다른 셸 에이전트 모두 아래 두 방식 중 하나로 쓰면 충분합니다.
+
+1. 사용자가 문서 성격을 말함  
+예: `전략 문서로 정리해줘`, `이건 PRD처럼 써줘`, `이건 위클리 위키야`
+
+2. 에이전트가 문서 내용을 보고 추론함  
+예: 문서가 이미 논의안·방향성 검토·옵션 비교 중심이면 전략 문서로, 범위·정책·오픈 이슈 중심이면 PRD로 해석
+
+즉 사용자가 정확한 preset 이름을 외울 필요는 없습니다. 스킬을 먼저 읽게 하고, 문서 성격을 말하거나 원문을 같이 주면 대부분 충분합니다.
 
 ### 권장 방식: 모든 에이전트에서 SKILL.md를 정본으로 사용
 
-Codex, Claude, OpenClaw, 다른 셸 에이전트 모두 아래처럼 쓸 수 있습니다.
-
 1. 에이전트에게 이 레포의 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)를 읽게 함
-2. 문서가 대략 어떤 성격인지 자연어로 말함
-3. 원문 초안을 함께 줌
+2. 원문 초안을 함께 줌
+3. `전략 문서`, `PRD`, `위클리`, `이슈 대응`, `허브 문서`처럼 대략적인 문서 성격만 말함
 4. 정말 필요할 때만 mode를 따로 지정함
 
 예시 요청:
@@ -64,9 +74,9 @@ Codex, Claude, OpenClaw, 다른 셸 에이전트 모두 아래처럼 쓸 수 있
 
 > 이건 이슈 대응 문서야. 예상 질문, 권고 답변, 리스크를 먼저 보이게 정리해줘.
 
-### 실제로는 이렇게 말하면 됩니다
+### 실제 요청은 보통 이 정도면 충분합니다
 
-아래처럼 말하면 대부분의 에이전트가 적절한 프리셋을 추론할 수 있습니다.
+아래처럼만 말해도 대부분의 에이전트가 적절한 프리셋을 추론할 수 있습니다.
 
 | 이렇게 말하면 됨 | 내부적으로는 대략 이렇게 해석 |
 | --- | --- |
@@ -79,7 +89,7 @@ Codex, Claude, OpenClaw, 다른 셸 에이전트 모두 아래처럼 쓸 수 있
 | 이슈 대응 문서처럼 정리해줘 | `response memo` |
 | 이슈 히스토리 위키처럼 정리해줘 | `issue history / incident log` |
 
-즉, 실제 사용에서는 `정확한 스킬 이름 + 정확한 mode`를 매번 외워서 말하는 것보다, 문서 성격을 자연어로 말하는 편이 더 현실적입니다. 그리고 별도 설명이 없으면 `위클리`는 하나의 문서군으로 이해하고, 짧은 주간 공유면 `weekly update`, 큰 상태판이나 포트폴리오 보드가 중심이면 그 안의 보드형 변형으로 해석하는 편이 좋습니다.
+즉, 실제 사용에서는 `정확한 스킬 이름 + 정확한 mode`를 매번 외워서 말하는 것보다, 문서 성격을 자연어로 말하는 편이 더 현실적입니다. 더 나아가 문서 원문 자체가 이미 전략 문서, PRD, 위클리, 허브 문서처럼 보인다면 에이전트가 그 성격을 보고 추론해도 됩니다.
 
 ### Codex에서 쓸 때
 
@@ -105,8 +115,6 @@ cp -R skills/report-memo-doc-style .claude/skills/
 
 이 레포의 root [`CLAUDE.md`](./CLAUDE.md)에는 Claude 기준 사용 방식을 따로 짧게 정리해두었습니다.
 
-프롬프트 템플릿은 정본이 아니라 `shortcut` 또는 `fallback`입니다. 스킬 파일을 직접 읽히기 어려운 환경에서만 참고용으로 쓰는 것을 권장합니다.
-
 ### OpenClaw / ClawHub에서 쓸 때
 
 현재 [`SKILL.md`](./skills/report-memo-doc-style/SKILL.md)는 `name`, `description`, `homepage`, `metadata.openclaw`를 포함한 OpenClaw-friendly frontmatter로 정리돼 있어서, OpenClaw workspace skill이나 ClawHub 배포용 skill로 쓰기 좋은 상태입니다.
@@ -117,25 +125,24 @@ OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspac
 
 실제 사용에서는 위 표처럼 자연어로 말해도 충분하지만, 더 명시적으로 쓰고 싶을 때는 아래 표를 참고하면 됩니다.
 
-| 문서 타입 | 언제 쓰나 | 먼저 지정할 것 | 참고 템플릿 |
-| --- | --- | --- | --- |
-| 전략 메모 | 왜 중요한지, 어떤 판단이 필요한지 먼저 보여줘야 할 때 | `strategy memo` + `light report-style` | [`prompts/strategy-memo.md`](./prompts/strategy-memo.md) |
-| 상위기획 / 컨셉 기획 | 방향, 우선순위, 1차 범위를 먼저 보여줘야 할 때 | `upper planning` + `light report-style` | [`prompts/upper-planning.md`](./prompts/upper-planning.md) |
-| PRD / 서비스기획 | 문제 정의, 범위, 흐름, 정책, 오픈 이슈를 분리해야 할 때 | `PRD / service planning` + `light report-style` | [`prompts/prd-service-planning.md`](./prompts/prd-service-planning.md) |
-| Skill / Capability Spec | 입력, 출력, 예외, 평가 기준을 명확히 써야 할 때 | `skill spec` + `source-preserving` | [`prompts/skill-spec.md`](./prompts/skill-spec.md) |
-| 유즈케이스 / 버티컬 워크플로 | `상황 / 동작 / 가치 / 제한` 구조로 정리해야 할 때 | `use case` + `light report-style` | [`prompts/use-case.md`](./prompts/use-case.md) |
-| 허브 / 인덱스 페이지 | 어디부터 읽을지, 어떤 문서가 중요한지 먼저 보여줘야 할 때 | `hub page` + `source-preserving` | [`prompts/hub-page.md`](./prompts/hub-page.md) |
-| 위클리 | 짧은 weekly summary, 대시보드 업데이트, 상태판 중심 팀 위클리까지 포함하는 문서군. 기본은 `weekly update`로 보고, 큰 상태판이면 보드형 변형으로 해석 | `weekly update` + `light report-style` 기본, 큰 상태판이면 `team weekly board` 변형 | [`prompts/weekly-update.md`](./prompts/weekly-update.md), [`prompts/team-weekly-board.md`](./prompts/team-weekly-board.md) |
-| 의사결정 원페이저 | 선택지 비교와 요청 결정사항을 한 장으로 정리할 때 | `decision one-pager` + `light report-style` | [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md) |
-| 트래킹 / 옵스 보드 (실험) | 살아 있는 이슈 보드, 확인 필요사항, 운영 현황, 상태 추적 문서를 빠르게 읽히게 정리할 때 | `tracking / ops board` + `source-preserving` 또는 `light report-style` | [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md) |
-| 이슈 히스토리 / 인시던트 로그 (실험) | 닫힌 이슈, 장애, 대응 이력을 누적 참조용으로 남길 때 | `issue history / incident log` + `source-preserving` | [`prompts/issue-history-incident-log.md`](./prompts/issue-history-incident-log.md) |
-| 대응 문서 / Q&A 메모 (실험) | 대외·대내 답변, 예상 질문, 모범 답변, 리스크, 추가 확인사항을 정리할 때 | `response memo` + `light report-style` | [`prompts/response-memo.md`](./prompts/response-memo.md) |
+| 문서 타입 | 언제 쓰나 | 먼저 지정할 것 |
+| --- | --- | --- |
+| 전략 메모 | 왜 중요한지, 어떤 판단이 필요한지 먼저 보여줘야 할 때 | `strategy memo` + `light report-style` |
+| 상위기획 / 컨셉 기획 | 방향, 우선순위, 1차 범위를 먼저 보여줘야 할 때 | `upper planning` + `light report-style` |
+| PRD / 서비스기획 | 문제 정의, 범위, 흐름, 정책, 오픈 이슈를 분리해야 할 때 | `PRD / service planning` + `light report-style` |
+| Skill / Capability Spec | 입력, 출력, 예외, 평가 기준을 명확히 써야 할 때 | `skill spec` + `source-preserving` |
+| 유즈케이스 / 버티컬 워크플로 | `상황 / 동작 / 가치 / 제한` 구조로 정리해야 할 때 | `use case` + `light report-style` |
+| 허브 / 인덱스 페이지 | 어디부터 읽을지, 어떤 문서가 중요한지 먼저 보여줘야 할 때 | `hub page` + `source-preserving` |
+| 위클리 | 짧은 weekly summary, 대시보드 업데이트, 상태판 중심 팀 위클리까지 포함하는 문서군. 기본은 `weekly update`로 보고, 큰 상태판이면 보드형 변형으로 해석 | `weekly update` + `light report-style` 기본, 큰 상태판이면 `team weekly board` 변형 |
+| 의사결정 원페이저 | 선택지 비교와 요청 결정사항을 한 장으로 정리할 때 | `decision one-pager` + `light report-style` |
+| 트래킹 / 옵스 보드 (실험) | 살아 있는 이슈 보드, 확인 필요사항, 운영 현황, 상태 추적 문서를 빠르게 읽히게 정리할 때 | `tracking / ops board` + `source-preserving` 또는 `light report-style` |
+| 이슈 히스토리 / 인시던트 로그 (실험) | 닫힌 이슈, 장애, 대응 이력을 누적 참조용으로 남길 때 | `issue history / incident log` + `source-preserving` |
+| 대응 문서 / Q&A 메모 (실험) | 대외·대내 답변, 예상 질문, 모범 답변, 리스크, 추가 확인사항을 정리할 때 | `response memo` + `light report-style` |
 
 ## 무엇이 들어 있나
 
 - 정본 역할의 스킬 문서: [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)
 - Codex / Claude / 다른 에이전트에서 스킬을 적용하는 방법
-- 참고용 프롬프트 템플릿
 - 스타일 차이를 바로 볼 수 있는 before / after 예시
 - 스킬을 실제 문서로 점검하고 개선할 수 있는 evaluation 루프
 
@@ -153,21 +160,6 @@ OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspac
 - 긴 문서는 `A.`, `A-1.` 넘버링 권장
 - 비교, 카테고리, 읽기 순서, 요약은 문단보다 작은 표 우선
 
-## 참고용 프롬프트 템플릿
-
-- [`prompts/strategy-memo.md`](./prompts/strategy-memo.md)
-- [`prompts/upper-planning.md`](./prompts/upper-planning.md)
-- [`prompts/prd-service-planning.md`](./prompts/prd-service-planning.md)
-- [`prompts/skill-spec.md`](./prompts/skill-spec.md)
-- [`prompts/use-case.md`](./prompts/use-case.md)
-- [`prompts/hub-page.md`](./prompts/hub-page.md)
-- [`prompts/weekly-update.md`](./prompts/weekly-update.md)
-- [`prompts/team-weekly-board.md`](./prompts/team-weekly-board.md)
-- [`prompts/decision-one-pager.md`](./prompts/decision-one-pager.md)
-- [`prompts/tracking-ops-board.md`](./prompts/tracking-ops-board.md)
-- [`prompts/issue-history-incident-log.md`](./prompts/issue-history-incident-log.md)
-- [`prompts/response-memo.md`](./prompts/response-memo.md)
-
 ## 예시
 
 - [`examples/before-strategy-memo.md`](./examples/before-strategy-memo.md)
@@ -184,7 +176,7 @@ OpenClaw 로컬 workspace에서는 `skills/report-memo-doc-style/`를 `<workspac
 3. 같은 문서를 [`evaluation/rubric.md`](./evaluation/rubric.md)와 [`evaluation/review-checklist.md`](./evaluation/review-checklist.md)로 비교
 4. 반복 실패를 [`evaluation/failure-taxonomy.md`](./evaluation/failure-taxonomy.md) 코드로 기록
 5. 결과를 로컬 전용 `evaluation/results/*.local.md` 로그로 남김
-6. 반복되는 실패만 스킬 규칙, 프롬프트, 예시에 반영
+6. 반복되는 실패만 스킬 규칙과 예시에 반영
 
 관련 파일:
 

@@ -1,10 +1,10 @@
 # AGENTS.md
 
-이 레포는 `프롬프트 모음`이 아니라 `문서 작성 스킬` 레포입니다. 에이전트가 이 레포를 읽을 때는 아래 원칙만 먼저 따르면 됩니다.
+이 레포는 `문서 작성 스킬` 레포입니다. 에이전트가 이 레포를 읽을 때는 아래 원칙만 먼저 따르면 됩니다.
 
 ## 1. SKILL 중심
 
-정본은 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다. 프롬프트 템플릿은 shortcut 또는 fallback으로만 봅니다.
+정본은 [`skills/report-memo-doc-style/SKILL.md`](./skills/report-memo-doc-style/SKILL.md)입니다.
 
 ## 2. 사용자 README 우선
 

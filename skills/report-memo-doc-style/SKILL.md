@@ -23,7 +23,7 @@ Typical trigger signals:
 - the output will be uploaded to a wiki or shared as an internal review document
 - the user says things like `전략 문서로 정리`, `상위기획처럼`, `PRD처럼`, `위키 허브처럼`, `위클리처럼`, `이슈 대응 문서처럼`
 
-You do not need exact preset names from the user. If the user's natural-language intent is clear enough, infer the closest preset and proceed.
+You do not need exact preset names from the user. If the user's natural-language intent is clear enough, infer the closest preset and proceed. If the user does not explicitly name the document type but the source itself clearly looks like a strategy memo, PRD, weekly, issue response memo, or hub page, infer from the source and continue.
 
 ## Core Rules
 

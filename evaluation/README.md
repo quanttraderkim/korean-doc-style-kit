@@ -23,7 +23,7 @@
 5. [`review-checklist.md`](./review-checklist.md)로 질적 점검
 6. [`failure-taxonomy.md`](./failure-taxonomy.md) 코드로 실패 유형 표기
 7. 로컬 전용 `evaluation/results/*.local.md`에 결과 로그 남기기
-8. 반복 실패만 스킬 / 프롬프트 / 예시에 반영
+8. 반복 실패만 스킬 / 예시에 반영
 
 ## C. 평가 산출물
 
