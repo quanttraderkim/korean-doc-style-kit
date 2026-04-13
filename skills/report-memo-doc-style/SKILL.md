@@ -1,6 +1,6 @@
 ---
 name: report-memo-doc-style
-description: Use this skill when Korean business documents feel too long, too polite, too abstract, or too hard to scan. Apply it to strategy memos, upper-planning docs, PRDs, service planning docs, capability specs, weekly updates, one-pagers, and hub pages so they read like concise report-style memos with strong structure, selective tables, explicit numbering for long docs, and minimal filler.
+description: Use this skill when Korean business documents feel too long, too polite, too abstract, or too hard to scan. Apply it to strategy memos, upper-planning docs, PRDs, service planning docs, capability specs, execution guides, runbooks, script usage guides, weekly updates, one-pagers, and hub pages so they read like concise report-style memos with strong structure, selective tables, explicit numbering for long docs, and minimal filler.
 homepage: https://github.com/quanttraderkim/korean-doc-skill
 user-invocable: true
 metadata: {"openclaw":{"homepage":"https://github.com/quanttraderkim/korean-doc-skill"}}
@@ -20,8 +20,9 @@ Typical trigger signals:
 - the writing is too polite or too explanatory
 - the document has long prose but weak structure
 - the reader should be able to skim it quickly
+- the reader needs to execute, verify, or judge something quickly
 - the output will be uploaded to a wiki or shared as an internal review document
-- the user says things like `전략 문서로 정리`, `상위기획처럼`, `PRD처럼`, `위키 허브처럼`, `위클리처럼`, `이슈 대응 문서처럼`
+- the user says things like `전략 문서로 정리`, `상위기획처럼`, `PRD처럼`, `위키 허브처럼`, `위클리처럼`, `이슈 대응 문서처럼`, `실행 가이드처럼`, `점검 절차처럼`, `런북처럼`
 
 You do not need exact preset names from the user. If the user's natural-language intent is clear enough, infer the closest preset and proceed. If the user does not explicitly name the document type but the source itself clearly looks like a strategy memo, PRD, weekly, issue response memo, or hub page, infer from the source and continue.
 
@@ -76,6 +77,7 @@ Natural-language shortcuts:
 - `상태판이 큰 위클리`, `보드형 위클리`, `큰 상태판 위클리`, `분기 보드` -> `Team Weekly Board` 변형
 - `이슈 대응 문서`, `Q&A 대응`, `답변 정리` -> `Response Memo`
 - `이슈 히스토리`, `장애 이력`, `대응 이력` -> `Issue History / Incident Log`
+- `실행 가이드`, `점검 절차`, `런북`, `운영 가이드`, `스크립트 사용법`, `체크리스트` -> `Execution Guide / Runbook / Script Usage Guide`
 
 ## Default Tone
 
@@ -219,6 +221,28 @@ Rules:
 - Put summary first
 - Use tables aggressively for options, impact, and ownership
 - Use collapsed detail only for backup material, not for the main argument
+
+### Execution Guide / Runbook / Script Usage Guide
+
+Recommended structure:
+
+- `먼저 볼 항목`
+- `바로 실행하는 순서`
+- `판정 기준`
+- `결과 확인`
+- `권한 제한 시 수동 확인`
+- `주의사항`
+
+Rules:
+
+- Treat this as an execution-support document, not a narrative explanation
+- Put the final artifact, final file, final column, or final judgment point on the first screen
+- If the reader only needs one file, one command, or one result field, state that explicitly near the top
+- Show the shortest successful execution path before detailed explanation
+- Prefer compact tables for `입력값`, `생성 파일`, `판정 기준`, `수동 확인 경로`
+- When permission issues or environment limits are likely, add a separate fallback section instead of mixing it into the main flow
+- This is not a live tracking board unless the document is continuously updated for status monitoring
+- For CloudShell, console, script, or operational check docs, prefer `A. 먼저 볼 항목 -> B. 바로 실행하는 순서 -> C. 판정 기준 -> D. 결과 확인 -> E. 권한 제한 시 수동 확인` ordering
 
 ### Weekly Update
 
