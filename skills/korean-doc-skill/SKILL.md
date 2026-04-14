@@ -1,12 +1,12 @@
 ---
-name: report-memo-doc-style
+name: korean-doc-skill
 description: Use this skill when Korean business documents feel too long, too polite, too abstract, or too hard to scan. Apply it to strategy memos, upper-planning docs, PRDs, service planning docs, capability specs, execution guides, runbooks, script usage guides, weekly updates, one-pagers, and hub pages so they read like concise report-style memos with strong structure, selective tables, explicit numbering for long docs, and minimal filler.
 homepage: https://github.com/quanttraderkim/korean-doc-skill
 user-invocable: true
 metadata: {"openclaw":{"homepage":"https://github.com/quanttraderkim/korean-doc-skill"}}
 ---
 
-# Report Memo Doc Style
+# Korean Doc Skill
 
 ## Overview
 
@@ -28,7 +28,7 @@ You do not need exact preset names from the user. If the user's natural-language
 
 ## Core Rules
 
-Write in short report-style memo Korean. Reduce repetitive `~입니다`, `~합니다`, `~됩니다`. Do not force every sentence into rigid `~함`. Also avoid drifting into long declarative `~한다` prose. Prefer noun phrases and short judgment-oriented wording such as `~필요`, `~전제`, `~검토`, `~제안`, `~가능`, `~우선`.
+Write in short report-style memo Korean. Reduce repetitive `~입니다`, `~합니다`, `~됩니다`. Do not force every sentence into rigid `~함`. Also avoid drifting into long declarative prose such as repeated `~한다`, `~이다`, or `~다` sentence endings. Prefer noun phrases and short judgment-oriented wording such as `~필요`, `~전제`, `~검토`, `~제안`, `~가능`, `~우선`.
 
 Lead with the conclusion. The first visible screen should answer why the document exists, what the key judgment is, and what needs to happen next.
 
@@ -43,6 +43,16 @@ For longer strategy, planning, or report documents, prefer explicit outline numb
 Use bullets only for parallel items. Do not break a single sentence into fake bullets just to make the page look shorter.
 
 Do not force sentence-final periods onto every short line. In headings, labels, table cells, bullets, one-line judgments, and memo-style fragments, omit the final period by default. Use a period only when writing a full prose sentence with multiple clauses, when two or more sentences appear in one paragraph, or when punctuation materially reduces ambiguity.
+
+If a section starts reading like explanatory narration with many consecutive `~다.` endings, compress it. Convert narrative explanation into a summary table, a short judgment block, or 2 to 3 memo-style bullets before expanding again.
+
+If the output is intended to be pasted into a Confluence page body, do not repeat the page title as a top-level `#` heading. Confluence already renders the page title above the body, so start with a short lead sentence or the first real section such as `## A. 먼저 볼 항목`.
+
+In top-summary sections such as `개요`, keep only the largest changes, purpose, target, or scope. Move edge cases, exception branches, empty-state handling, and implementation detail into lower sections such as `주요 변경 포인트`, `예외`, or `운영 포인트`.
+
+When the document is mainly about a UI, layout, or visible behavior change, prefer an `AS-IS / TO-BE` visual comparison near the top before detailed prose. For Confluence delivery, favor native-looking links and simple table emphasis when they materially improve scanability.
+
+For short summary tables, definition tables, and policy tables in Confluence, first-column emphasis often improves scanability. If the tool can write Confluence-native table styling or post-edit the rendered page, prefer subtle first-column background shading on label columns such as `항목`, `구분`, `용어`, `화면군`. If the pipeline is markdown-only, treat this as optional post-processing rather than a required output rule.
 
 Use tables when the reader needs comparison, categorization, ownership, tradeoffs, options, targets, state transitions, or summary at a glance.
 
