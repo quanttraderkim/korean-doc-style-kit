@@ -64,6 +64,8 @@ When documenting writing rules or guidance, avoid dense narrative explanation. P
 
 For long planning or policy documents, do not place document history, revision logs, ticket references, or guide metadata above the real summary. Show purpose and key judgment first, then place metadata below if needed.
 
+Avoid em dash (`—`) as a mid-sentence separator. Korean business memos rarely use it, and it can read as a foreign habit in internal docs. Replace with one of: colon (`:`) for label and explanation, parentheses for parenthetical context, period to split into two sentences, slash (`/`) for parallel alternatives, or a nested bullet with 4-space indent for longer elaborations. If a single line reads like `X — Y`, first consider whether `Y` belongs as a sub-bullet under `X` instead.
+
 ## Rewrite Modes
 
 Choose one mode first.
@@ -443,6 +445,8 @@ Do not let the document slide into long `~한다` explanation mode. Declarative 
 
 Do not write style guidance as dense narrative paragraphs when a short labeled checklist would communicate faster.
 
+Do not use em dash (`—`) as a mid-sentence separator. Replace with `:`, `(...)`, `.`, `/`, or a nested bullet.
+
 ## Micro Examples
 
 ### Headings
@@ -485,6 +489,22 @@ Avoid:
 - `이 기능은 특정 직군에게 중요한 가치를 제공한다`
 - `이 서비스는 고객관리에 매우 유용한 역할을 한다`
 
+### Punctuation
+
+Prefer:
+
+- `완료 조건은 케이스별 상이 (각 섹션 참조)`
+- `기본: 총 예산 내 분배`
+- `방향성만. 세부는 미정`
+
+Avoid:
+
+- `완료 조건은 케이스별 상이 — 각 섹션 참조`
+- `기본 — 총 예산 내 분배`
+- `방향성만 — 세부는 미정`
+
+Em dash in Korean memos tends to read as translated English. Colon, parentheses, period, slash, and nested bullets cover the same roles more naturally.
+
 ### Tables
 
 Use tables for:
@@ -516,6 +536,31 @@ When using this skill:
 
 If unsure, prefer source-preserving rewrite plus structure improvement over aggressive summarization.
 
+## Editing Existing Confluence Pages
+
+When updating a page that already carries reader feedback, preserve collaborative context where possible.
+
+### Check for Inline Comments Before a Full Body Rewrite
+
+- Inline comments (sidebar comments anchored to a specific text span) are stored in Confluence storage XML as `<ac:inline-comment-marker ac:ref="...">selected text</ac:inline-comment-marker>` around the highlighted text.
+- A full body overwrite (replacing the entire page body via markdown or HTML) erases those markers. The comments then fall into a "dangling" state, detached from the body.
+- Before a full body overwrite, check whether the page has inline comments. If it does, warn the user and consider partial edits first.
+
+### Prefer Partial Edits When Comments Exist
+
+- Replace a single section under a heading, insert content after a heading, or append rather than overwriting the whole body, so that comment anchors elsewhere in the page survive.
+- Only fall back to full body overwrite when the change spans most of the page and after confirming the user is willing to lose existing inline comment anchors.
+
+### Dangling Comments Do Not Auto-Reattach
+
+- Confluence Server / Data Center does not re-attach a dangling inline comment even if the original text and a matching `ac:ref` marker reappear later. The server tracks the dangling state as a property of the comment itself.
+- The comment body is not lost. It remains accessible through the page's comment sidebar or dangling area. Recovery of the inline anchor requires a human to resolve the old comment and re-create it in the UI at the new location. Tools cannot reliably re-attach.
+
+### When In Doubt
+
+- Ask the user before a destructive overwrite.
+- If comments are already dangling after an earlier edit, be transparent: explain the limitation and suggest the manual UI recovery path rather than claiming a fix.
+
 ## Self-check Before Finalizing
 
 Before returning the final draft, check:
@@ -528,3 +573,4 @@ Before returning the final draft, check:
 6. Would explicit `A. / A-1.` numbering improve scanability?
 7. Are the headings carrying actual messages?
 8. Is any paragraph still too long and better split?
+9. Is any em dash (`—`) used where a colon, parentheses, period, slash, or nested bullet would read more naturally?
